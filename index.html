@@ -4,26 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#000; color:#fff; line-height:1.6; }
-    header, footer, nav, section { padding:20px; text-align:center; }
-    header { padding:60px 20px; background:#111; }
-    header img { width:150px; height:150px; border-radius:8px; border:2px solid #fff; object-fit:cover; }
-    nav { position:sticky; top:0; background:#000; border-bottom:1px solid #333; }
-    nav a { color:#fff; margin:0 10px; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:#aaa; }
-    h2 { border-bottom:2px solid #fff; display:inline-block; margin-bottom:20px; }
-    .job, .project { background:#111; padding:15px; border-radius:6px; margin:15px auto; max-width:600px; }
-    .project img, .project iframe { width:100%; border-radius:4px; }
-    .filter-btn { background:#111; color:#fff; border:1px solid #fff; padding:6px 12px; margin:5px; cursor:pointer; }
-    .filter-btn:hover { background:#fff; color:#000; }
-    footer { background:#111; font-size:0.9rem; color:#777; }
-  </style>
-  <style>
 
-    { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: #000; color: #fff; }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { 
+      font-family: Arial, sans-serif; 
+      line-height: 1.6; 
+      background: #000; 
+      color: #fff; 
+    }
 
     header {
       background: #111;
@@ -31,8 +21,6 @@
       padding: 80px 20px;
       text-align: center;
     }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; color: #aaa; }
 
     /* Intro Layout */
     .intro-container {
@@ -46,6 +34,16 @@
     .intro-text {
       text-align: center;
       max-width: 500px;
+    }
+
+    .intro-text h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      color: #aaa;
     }
 
     .intro-image img {
@@ -67,6 +65,7 @@
       border-bottom: 1px solid #333;
       z-index: 10;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
@@ -74,6 +73,7 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover { color: #aaa; }
 
     section {
@@ -81,6 +81,7 @@
       max-width: 900px;
       margin: auto;
     }
+
     section h2 {
       text-align: center;
       margin-bottom: 30px;
@@ -90,8 +91,10 @@
       padding-bottom: 5px;
     }
 
-    /* About */
-    #about p, #experience p, #contact p { text-align: center; color: #ccc; }
+    #about p, #experience p, #contact p { 
+      text-align: center; 
+      color: #ccc; 
+    }
 
     /* Experience */
     .timeline {
@@ -99,40 +102,58 @@
       flex-direction: column;
       gap: 20px;
     }
+
     .job {
       background: #111;
       padding: 20px;
       border-radius: 6px;
       border-left: 3px solid #fff;
+      max-width: 800px;
+      margin: auto;
     }
-    .job h3 { margin-bottom: 5px; color: #fff; }
-    .job span { font-size: 0.9rem; color: #aaa; }
-    .job p { margin-top: 10px; color: #ccc; }
+
+    .job h3 { 
+      margin-bottom: 5px; 
+      color: #fff; 
+    }
+
+    .job span { 
+      font-size: 0.9rem; 
+      color: #aaa; 
+    }
+
+    .job p { 
+      margin-top: 10px; 
+      color: #ccc; 
+      text-align: justify;
+    }
 
     /* Projects */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
     .project {
       background: #111;
       padding: 20px;
       border-radius: 6px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 800px;
+      margin: 20px auto;
     }
+
     .project:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 15px rgba(255,255,255,0.3);
     }
-    .project img {
+
+    .project img, .project iframe {
       max-width: 100%;
       border-radius: 4px;
       margin-bottom: 10px;
     }
+
     .project h3 { margin-bottom: 10px; color: #fff; }
+
     .project p { color: #ccc; }
+
     .project a {
       display: inline-block;
       margin-top: 10px;
@@ -143,17 +164,11 @@
       text-decoration: none;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     .project a:hover {
       background: #fff;
       color: #000;
     }
-
-    /* Contact */
-    #contact a {
-      color: #fff;
-      text-decoration: none;
-    }
-    #contact a:hover { text-decoration: underline; }
 
     footer {
       background: #111;
@@ -164,7 +179,7 @@
       font-size: 0.9rem;
     }
 
-    /* Filter Button Styles */
+    /* Filter Buttons */
     .filter-btn {
       background: #111;
       color: #fff;
@@ -175,14 +190,13 @@
       cursor: pointer;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     .filter-btn:hover {
       background: #fff;
       color: #000;
     }
 
-    /* ========================= */
-    /* CHATBOT STYLES (ADDED) */
-    /* ========================= */
+    /* CHATBOT */
     .chatbot-btn {
       position: fixed;
       bottom: 20px;
@@ -224,7 +238,7 @@
 
     .chatbot-messages {
       padding: 10px;
-      height: 280px;
+      height: 260px;
       overflow-y: auto;
       font-size: 0.9rem;
       text-align: left;
@@ -272,17 +286,18 @@
 
   </style>
 </head>
+
 <body>
 
   <!-- Intro -->
   <header id="intro">
     <div class="intro-container">
       <div class="intro-image">
-        <a href=""target="_blank"><img src="profile.jpg" alt="My Picture" width="200" height="200"></a>
+        <img src="profile.jpg" alt="My Picture">
       </div>
       <div class="intro-text">
         <h2>Hi, I'm John Therence G. Jawod</h2>
-        <p>BSIT Student of Central Philipines State University (CPSU)</p>
+        <p>BSIT Student of Central Philippines State University (CPSU)</p>
       </div>
     </div>
   </header>
@@ -296,173 +311,169 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- About Me -->
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm John Therece G. Jawod, a passionate BSIT student who loves creating functional and minimalist designs, code and edit. I enjoy editing, making products and reading when I have free time.</p>
-    
-    <h2>SKILLS</h2>
-    <p>FIGMA , CANVA , PHOTOSHOP , C++ , JAVA SCRIPT , WEBSITE , PHOTO AND VIDEO EDITING .</p>
-    
+    <p>
+      Hello! I'm John Therence G. Jawod, a passionate BSIT student who loves creating functional and minimalist designs,
+      coding, editing, and reading during free time.
+    </p>
+
+    <br><br>
+
+    <h2>Skills</h2>
+    <p>FIGMA, CANVA, PHOTOSHOP, C++, JAVASCRIPT, WEBSITE DEVELOPMENT, PHOTO & VIDEO EDITING.</p>
   </section>
 
   <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="timeline">
+
       <div class="job">
-        <h3>OJT<span> - MICHAEL COMPUTER SOLUTION</span></h3>
+        <h3>OJT <span> - MICHAEL COMPUTER SOLUTION</span></h3>
         <span>2023 - 2024</span>
-        <p style="text-align:justify;">I was a TVL-CSS student of Cabacungan National High School, I OJT at MICHAEL COMPUTER SOLUTION in Bacolod. I make piso wifi and RJ 45 ethernet cord, I also set up computers. Thanks to sir Micheal and his workers I learned many things. </p>
+        <p>
+          I was a TVL-CSS student of Cabacungan National High School. I had my OJT at MICHAEL COMPUTER SOLUTION in Bacolod.
+          I made piso wifi and RJ45 ethernet cords, and also set up computers.
+        </p>
       </div>
+
       <div class="job">
-        <h3>STUDENT <span>– CABACUNGAN NATIONAL HIGHSCHOOL-SENIOR HIGH</span></h3>
+        <h3>STUDENT <span> - CABACUNGAN NATIONAL HIGHSCHOOL (Senior High)</span></h3>
         <span>2021 - 2022</span>
-        <p style="text-align: justify;">class=""In highschool I was a TVL-CSS student of Cabacungan National High School, I learned how to format, install computer OS, make a RJ 45 ethernet cord, and set up a simple client/server network.</p>
+        <p>
+          In high school I was a TVL-CSS student of Cabacungan National High School.
+          I learned how to format and install OS, make RJ45 ethernet cords, and set up simple client/server networks.
+        </p>
       </div>
+
     </div>
   </section>
 
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  
-  <!-- Filter Buttons -->
-  <div style="text-align:center; margin-bottom:30px;">
-    <button class="filter-btn" onclick="filterProjects('all')">All</button>
-    <button class="filter-btn" onclick="filterProjects('youtube')">YouTube Tutorial</button>
-    <button class="filter-btn" onclick="filterProjects('school')">School Outputs</button>
-    <button class="filter-btn" onclick="filterProjects('certificate')">Certificate</button>
-  </div>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
 
-  <div class="project youtube">
-    <iframe width="100%" height="300" src="https://www.youtube.com/embed/GH2AKPMttwQ?si=gRkDj9oYId-bhyiG" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    <h3>Video Project</h3>
-    <p>My YouTube video</p>
-    <a href="https://youtu.be/GH2AKPMttwQ?si=gRkDj9oYId-bhyiG" target="_blank">Watch on YouTube</a>
-  </div>
+    <div style="text-align:center; margin-bottom:30px;">
+      <button class="filter-btn" onclick="filterProjects('all')">All</button>
+      <button class="filter-btn" onclick="filterProjects('youtube')">YouTube Tutorial</button>
+      <button class="filter-btn" onclick="filterProjects('school')">School Outputs</button>
+      <button class="filter-btn" onclick="filterProjects('certificate')">Certificate</button>
+    </div>
 
-  <div class="project youtube">
-    <iframe width="100%" height="300" src="https://www.youtube.com/embed/VikpFchFUzQ?si=2VZBhB4IfZSkhzcm" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    <h3>Video Project</h3>
-    <p>Tutorial video</p>
-    <a href="https://youtu.be/VikpFchFUzQ?si=2VZBhB4IfZSkhzcm" target="_blank">Watch on YouTube</a>
-  </div>
-  
-  <div class="project youtube">
-    <iframe width="100%" height="300" src="https://www.youtube.com/embed/mDOQC5yAm6w?si=2v-5j7oOAK5uk6M2" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    <h3>Video Project</h3>
-    <p>Tutorial video</p>
-    <a href="https://youtube.com/shorts/mDOQC5yAm6w?si=2v-5j7oOAK5uk6M2" target="_blank">Watch on YouTube</a>
-  </div>
-  <br>
-  <!-- School Project -->
-  <div class="project school">
-    <img src="canva.jpg" alt="School Project 1" width="200" height="200">
-    <h3>PORTFOLIO IN CANVA</h3>
-    <p>CLICK THE IMAGE TO SEE MY WORK</p>
-    <a href="https://www.canva.com/design/DAGvdVEcWKA/4BUthWVl_QXlfVE83h7p3g/edit?utm_content=DAGvdVEcWKA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Open</a>
-  </div>
-  
-<div class="project school">
-  <img src="figma.jpg" alt="School Project 1"width="200" height="200">
-  <h3>PORTFOLIO IN FIGMA</h3>
-  <p>A project I submitted for my web design subject.</p>
-  <a href="https://www.figma.com/proto/PjDsG7dTJL8f2qKkDNOPTR/PORTFOLIO?node-id=0-1&t=PbppgfwbQgi4JYSm-1" target="_blank">Open</a>
-</div>
+    <!-- YouTube -->
+    <div class="project youtube">
+      <iframe height="300" src="https://www.youtube.com/embed/GH2AKPMttwQ"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <h3>Video Project</h3>
+      <p>My YouTube video</p>
+      <a href="https://youtu.be/GH2AKPMttwQ" target="_blank">Watch on YouTube</a>
+    </div>
 
-  <div class="project school">
-    <img src="figma.jpg" alt="School Project 2"width="200" height="200">
-    <h3>E-COMMERCE IN FIGMA</h3>
-    <p>CLICK THE IMAGE TO SEE MY WORK</p>
-    <a href="https://www.figma.com/proto/LcYK94kaTbwFYYDU6nqWOW/Untitled?node-id=0-1&t=IJvGOg7gu836Pczp-1" target="_blank">Open</a>
-  </div>
+    <div class="project youtube">
+      <iframe height="300" src="https://www.youtube.com/embed/VikpFchFUzQ"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <h3>Video Project</h3>
+      <p>Tutorial video</p>
+      <a href="https://youtu.be/VikpFchFUzQ" target="_blank">Watch on YouTube</a>
+    </div>
+
+    <div class="project youtube">
+      <iframe height="300" src="https://www.youtube.com/embed/mDOQC5yAm6w"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <h3>Video Project</h3>
+      <p>Tutorial video</p>
+      <a href="https://youtube.com/shorts/mDOQC5yAm6w" target="_blank">Watch on YouTube</a>
+    </div>
+
+    <!-- School Outputs -->
+    <div class="project school">
+      <img src="canva.jpg" alt="Canva Project">
+      <h3>PORTFOLIO IN CANVA</h3>
+      <p>CLICK THE BUTTON TO SEE MY WORK</p>
+      <a href="https://www.canva.com/design/DAGvdVEcWKA/4BUthWVl_QXlfVE83h7p3g/edit?utm_content=DAGvdVEcWKA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Open</a>
+    </div>
 
     <div class="project school">
-    <img src="website.png" alt="School Project 2"width="200" height="200">
-    <h3>WEBSITE</h3>
-    <p>CLICK THE IMAGE TO SEE MY WORK</p>
-    <a href="https://k3758982-create.github.io/Website-/" target="_blank">Open</a>
+      <img src="figma.jpg" alt="Figma Portfolio">
+      <h3>PORTFOLIO IN FIGMA</h3>
+      <p>A project I submitted for my web design subject.</p>
+      <a href="https://www.figma.com/proto/PjDsG7dTJL8f2qKkDNOPTR/PORTFOLIO?node-id=0-1" target="_blank">Open</a>
     </div>
-   
-    <div class="project certificate">
-     <img src="certificate.jpg" alt="certificate"width="200" height="200">
-     <h3>Certificate</h3>
-    </div>
-  
-    <div class="project certificate">
-     <img src="certificate 1.jpg" alt="certificate"width="200" height="200">
-     <h3>Certificate</h3>
-    </div>
-  
-    <div class="project certificate">
-     <img src="certificate 2.jpg" alt="certificate"width="200" height="200">
-     <h3>Certificate</h3>
-    </div>
-  
-    <div class="project certificate">
-     <img src="certificate 3.jpg" alt="certificate"width="200" height="200">
-     <h3>Certificate</h3>
-    </div>
-  
-    <div class="project certificate">
-     <img src="certificate 4.jpg" alt="certificate"width="200" height="200">
-     <h3>Certificate</h3>
-    </div>
-  
-      <img src="resume.jpg" 2"width="200" height="200">
-      <h3>RESUME</h3>
-        <a href="resume.jpg" download="resume.jpg">
-      <button>Download File</button>
-        </a>
-</section>
 
-<!-- Filter Script -->
-<script>
-  function filterProjects(category) {
-    let projects = document.querySelectorAll('.project');
-    projects.forEach(project => {
-      if (category === 'all' || project.classList.contains(category)) {
-        project.style.display = 'block';
-      } else {
-        project.style.display = 'none';
-      }
-    });
-  }
-</script>
+    <div class="project school">
+      <img src="figma.jpg" alt="E-commerce Figma">
+      <h3>E-COMMERCE IN FIGMA</h3>
+      <p>CLICK THE BUTTON TO SEE MY WORK</p>
+      <a href="https://www.figma.com/proto/LcYK94kaTbwFYYDU6nqWOW/Untitled?node-id=0-1" target="_blank">Open</a>
+    </div>
+
+    <div class="project school">
+      <img src="website.png" alt="Website Project">
+      <h3>WEBSITE</h3>
+      <p>CLICK THE BUTTON TO SEE MY WORK</p>
+      <a href="https://k3758982-create.github.io/Website-/" target="_blank">Open</a>
+    </div>
+
+    <!-- Certificates -->
+    <div class="project certificate">
+      <img src="certificate.jpg" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+
+    <div class="project certificate">
+      <img src="certificate 1.jpg" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+
+    <div class="project certificate">
+      <img src="certificate 2.jpg" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+
+    <div class="project certificate">
+      <img src="certificate 3.jpg" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+
+    <div class="project certificate">
+      <img src="certificate 4.jpg" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+
+    <!-- Resume -->
+    <div class="project school">
+      <img src="resume.jpg" alt="Resume">
+      <h3>RESUME</h3>
+      <a href="resume.jpg" download="resume.jpg">Download Resume</a>
+    </div>
+
+  </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p style="text-align: just;">Email: john.therence.jawod07@email.com</a></p>
+    <p>Email: john.therence.jawod07@email.com</p>
     <p>Number: 09934129959</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 [ JOHN THERENCE G. JAWOD ]. All rights reserved.</p>
+    <p>© 2025 JOHN THERENCE G. JAWOD. All rights reserved.</p>
   </footer>
 
-  <!-- ========================= -->
-  <!-- CHATBOT HTML (ADDED) -->
-  <!-- ========================= -->
+  <!-- CHATBOT -->
   <button class="chatbot-btn" onclick="toggleChatbot()">Chat</button>
 
   <div class="chatbot-box" id="chatbotBox">
     <div class="chatbot-header">Portfolio Assistant</div>
 
-    <!-- ========================= -->
-    <!-- CHATBOT SELECTION (ADDED) -->
-    <!-- ========================= -->
     <div style="padding:10px; border-bottom:1px solid #333; text-align:center;">
       <p style="margin:0 0 8px; font-size:0.85rem; color:#aaa;">Select what you want to ask:</p>
 
@@ -488,14 +499,18 @@
     </div>
   </div>
 
-  <!-- ========================= -->
-  <!-- CHATBOT SCRIPT (ADDED) -->
-  <!-- ========================= -->
   <script>
+    function filterProjects(category) {
+      let projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        if (category === 'all' || project.classList.contains(category)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
 
-    /* ========================= */
-    /* QUICK ASK FUNCTION (ADDED) */
-    /* ========================= */
     function quickAsk(topic) {
       const input = document.getElementById("chatInput");
 
@@ -529,13 +544,11 @@
 
       const chatMessages = document.getElementById("chatMessages");
 
-      // User message
       const userMsg = document.createElement("div");
       userMsg.className = "user-message";
       userMsg.textContent = message;
       chatMessages.appendChild(userMsg);
 
-      // Bot reply
       const botMsg = document.createElement("div");
       botMsg.className = "bot-message";
       botMsg.textContent = getBotResponse(message);
@@ -548,65 +561,53 @@
     function getBotResponse(userInput) {
       const msg = userInput.toLowerCase();
 
-      // INTRO
       if (msg.includes("owner") || msg.includes("who is the owner")) {
         return "This portfolio belongs to John Therence G. Jawod, a BSIT student at Central Philippines State University (CPSU).";
       }
 
-      // ABOUT
       if (msg.includes("about") || msg.includes("therence")) {
         return "John Therence G. Jawod is a BSIT student who enjoys creating minimalist designs, coding, editing, and reading during free time.";
       }
 
-      // SKILLS
       if (msg.includes("skills") || msg.includes("skill") || msg.includes("what can you do")) {
         return "John's skills include Figma, Canva, Photoshop, C++, JavaScript, Website Development, and Photo/Video Editing.";
       }
 
-      // EXPERIENCE
       if (msg.includes("experience") || msg.includes("ojt") || msg.includes("work")) {
         return "John has OJT experience at MICHAEL COMPUTER SOLUTION (2023-2024) where he worked on piso wifi, RJ45 ethernet cords, and computer setup.";
       }
 
-      // PROJECTS
       if (msg.includes("project") || msg.includes("projects")) {
         return "John has projects including YouTube tutorial videos, Canva portfolio, Figma portfolio, E-commerce design in Figma, and a website project.";
       }
 
-      // YOUTUBE
       if (msg.includes("youtube") || msg.includes("video")) {
         return "John has uploaded tutorial videos on YouTube. You can check them under the Projects section.";
       }
 
-      // FIGMA
       if (msg.includes("figma")) {
         return "John has multiple Figma projects including a portfolio and an e-commerce design. Check the Projects section to open them.";
       }
 
-      // CANVA
       if (msg.includes("canva")) {
         return "John has a Canva portfolio project available in the Projects section. You can open it using the link provided.";
       }
 
-      // RESUME
       if (msg.includes("resume") || msg.includes("cv")) {
         return "John's resume is available in the Projects section. You can download it using the download button.";
       }
 
-      // CERTIFICATE
       if (msg.includes("certificate") || msg.includes("certificates")) {
         return "John has certificates displayed in the Projects section under the Certificate category.";
       }
 
-      // CONTACT
       if (msg.includes("contact") || msg.includes("email") || msg.includes("number") || msg.includes("phone")) {
         return "You can contact John via email: john.therence.jawod07@email.com or phone: 09934129959.";
       }
 
-      // DEFAULT
       return "Sorry, I can only answer questions related to this portfolio website (About, Skills, Projects, Experience, Contact).";
     }
   </script>
 
 </body>
-      </html>
+</html>
